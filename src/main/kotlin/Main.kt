@@ -5,15 +5,15 @@ fun main() {
     println(printpaypal)
 }
 fun paypal(card : String, history: Int, amount : Int): String {
-    var comissionMaster = 0
-    var comissionMaster2 = amount * 0.006 + 20
-    var comission1 = amount * 0.0075
+    val comissionMaster = 0
+    val comissionMaster2 = amount * 0.006 + 20
+    val comission1 = amount * 0.0075
     val comission2 = 35
-    var Limit = 75_000
-    var comissionCard : String = when(card) {
+    val limit = 75_000
+    val comissionCard : String = when(card) {
         "Maestro","Mastercard" -> {
             when {
-                history <= Limit -> {
+                history <= limit -> {
                 "$comissionMaster"
                 }
                 else ->{
