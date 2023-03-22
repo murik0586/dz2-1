@@ -1,38 +1,38 @@
 package ru.netology
 
 fun main() {
-    val printpaypal = paypal("Maestro", 75001, 76000)
+    val printpaypal = paypal("Maestro", 75000, 75001)
     println(printpaypal)
 }
 fun paypal(card : String, history: Int, amount : Int): String {
     var comissionMaster = 0
-    val doorstep = 4666
-    val com = 0.0075
-    val comission1 = amount * com
+    var comissionMaster2 = amount * 0.006 + 20
+    var comission1 = amount * 0.0075
     val comission2 = 35
+    var Limit = 75_000
     var comissionCard : String = when(card) {
         "Maestro","Mastercard" -> {
             when {
-                history <= 75_000 -> {//amount <= 75000 -> {
+                history <= Limit -> {
                 "$comissionMaster"
                 }
                 else ->{
-                   var comissionMaster = amount * 0.006 + 20
-                    "$comissionMaster"
+                    "$comissionMaster2"
                 }
             }
         }
         "VkPay" -> { "$comissionMaster"}
-        else -> {
+         else -> {
           when {
-              amount <= 4666 -> {
-                  "$comission2"
-              }//amount * com подсчет
+              comission1 > comission2 -> {
+                  "$comission1"
+              }
                       else ->{
-                          "$comission1"
+                          "$comission2"
                       }
               }
           }
+
     }
     return comissionCard
 
