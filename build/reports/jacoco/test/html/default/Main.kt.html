@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Dz22</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Main.kt</span></div><h1>Main.kt</h1><pre class="source lang-java linenums">
+fun main() {
+<span class="fc" id="L3">    val printpaypal = paypal(&quot;_&quot;, 1000, 2000)</span>
+<span class="fc" id="L4">    println(printpaypal)</span>
+<span class="fc" id="L5">}</span>
+
+fun paypal(card: String, history: Int, amount: Int): Any {
+<span class="fc" id="L8">    val comissionMaster = 0</span>
+<span class="fc" id="L9">    val comissionMaster2 = amount * 0.006 + 20</span>
+<span class="fc" id="L10">    val comission1 = amount * 0.0075</span>
+<span class="fc" id="L11">    val comission2 = 35</span>
+<span class="fc" id="L12">    val limit = 75_000</span>
+<span class="fc" id="L13">    val LimitVisaDayAndMir = 150_000</span>
+<span class="pc bpc" id="L14" title="3 of 10 branches missed.">    val comissionCard: Any = when (card) {</span>
+        &quot;Maestro&quot;, &quot;Mastercard&quot; -&gt; {
+<span class="fc" id="L16">            when {</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">                history + amount &lt;= limit -&gt; {</span>
+<span class="fc" id="L18">                    &quot;$comissionMaster&quot;</span>
+                }
+
+<span class="fc bfc" id="L21" title="All 2 branches covered.">                history + amount &gt; 600_000 -&gt; &quot;РџСЂРµРІС‹С€РµРЅС‹ Р»РёРјРёС‚С‹ РїРѕ РєР°СЂС‚Рµ&quot;</span>
+
+                else -&gt; {
+<span class="fc" id="L24">                    &quot;${comissionMaster2.toInt()}&quot;</span>
+                }
+            }
+
+        }
+
+        &quot;VkPay&quot; -&gt; {
+<span class="fc" id="L31">            &quot;$comissionMaster&quot;</span>
+        }
+
+        else -&gt; {
+
+<span class="fc bfc" id="L36" title="All 2 branches covered.">             if (comission1 &gt; comission2) {</span>
+
+<span class="fc" id="L38">                    &quot;${comission1.toInt()}&quot;</span>
+                } else {
+<span class="fc" id="L40">                    &quot;$comission2&quot;</span>
+                }
+
+
+                   }
+        }
+
+<span class="fc" id="L47">    return comissionCard</span>
+
+}
+
+
+
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

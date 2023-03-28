@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MainKtTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-03-28T20:19:25" hostname="LAPTOP-I2R1M18C" time="0.111">
+  <properties/>
+  <testcase name="paypal1MasterCard1" classname="MainKtTest" time="0.044"/>
+  <testcase name="paypal1MasterCard2" classname="MainKtTest" time="0.002"/>
+  <testcase name="paypal1Maestro1" classname="MainKtTest" time="0.001"/>
+  <testcase name="paypal1Maestro2" classname="MainKtTest" time="0.002"/>
+  <testcase name="else1" classname="MainKtTest" time="0.002"/>
+  <testcase name="else2" classname="MainKtTest" time="0.001"/>
+  <testcase name="else3" classname="MainKtTest" time="0.001"/>
+  <testcase name="main1" classname="MainKtTest" time="0.001"/>
+  <testcase name="main2" classname="MainKtTest" time="0.019"/>
+  <testcase name="paypal1MasterOver" classname="MainKtTest" time="0.001"/>
+  <testcase name="paypal1VisaAndMiR" classname="MainKtTest" time="0.0"/>
+  <testcase name="paypalVKpay1" classname="MainKtTest" time="0.015"/>
+  <testcase name="paypal1MaestroOver" classname="MainKtTest" time="0.001"/>
+  <system-out><![CDATA[35
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
