@@ -1,42 +1,53 @@
-package ru.netology
 
 fun main() {
-    val printpaypal = paypal("Maestro", 75000, 75001)
+    val printpaypal = paypal("_", 1000, 2000)
     println(printpaypal)
 }
-fun paypal(card : String, history: Int, amount : Int): String {
+
+fun paypal(card: String, history: Int, amount: Int): Any {
     val comissionMaster = 0
     val comissionMaster2 = amount * 0.006 + 20
     val comission1 = amount * 0.0075
     val comission2 = 35
     val limit = 75_000
-    val comissionCard : String = when(card) {
-        "Maestro","Mastercard" -> {
+    val LimitVisaDayAndMir = 150_000
+    val comissionCard: Any = when (card) {
+        "Maestro", "Mastercard" -> {
             when {
-                history <= limit -> {
-                "$comissionMaster"
+                history + amount <= limit -> {
+                    "$comissionMaster"
                 }
-                else ->{
-                    "$comissionMaster2"
+
+                history + amount > 600_000 -> "Превышены лимиты по карте"
+
+                else -> {
+                    "${comissionMaster2.toInt()}"
                 }
             }
-        }
-        "VkPay" -> { "$comissionMaster"}
-         else -> {
-          when {
-              comission1 > comission2 -> {
-                  "$comission1"
-              }
-                      else ->{
-                          "$comission2"
-                      }
-              }
-          }
 
-    }
+        }
+
+        "VkPay" -> {
+            "$comissionMaster"
+        }
+
+        else -> {
+
+             if (comission1 > comission2) {
+
+                    "${comission1.toInt()}"
+                } else {
+                    "$comission2"
+                }
+
+
+                   }
+        }
+
     return comissionCard
 
 }
+
 
 
 
