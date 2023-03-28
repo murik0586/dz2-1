@@ -8,6 +8,7 @@ HELP.md
 /build/libs
 build/snapshot
 build/test-results
+build/tmp
 
 
 ### STS ###
